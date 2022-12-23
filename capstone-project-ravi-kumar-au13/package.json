@@ -6,6 +6,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
+    "build": "rm -rf dist && babel backend -d dist && cd frontend && npm install && npm run build",
+    "serve":"node dist/server.js",
     "server": "nodemon server",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
